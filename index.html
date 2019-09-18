@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="Assignment">
+  <meta name="keywords" content="Assignment, Isao, Kozakai">
+  <meta name="author" content="Isao Kozakai">​
+  <meta name="generator" content="Isao Kozakai">
+  <meta name="application-name" content="Assignment">
+  <title>Document</title>
+  <style>
+    h1 {
+      color: brown;
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    }
+    p {
+      color: darkgreen;
+      font-weight: bold;
+    }
+    h2 {
+      color: blue;
+    }
+    h3 {
+      color: blueviolet;
+    }
+    textarea {
+      height: 100px;
+      width: 600px;
+    }
+    button {
+      opacity: 0;
+    }
+  </style>
+</head>
+
+<body onload="onPageLoaded()">
+  <h1 id="baseURI"></h1>
+  <p id="cookie"></p>
+  <h2 id="doctype"></h2>
+  <h3 id="mode"></h3>
+  <div id="relativeURI"></div>
+  <div id="DOMImplementation"></div>
+  <div id="encodingType"></div>
+  <div id="error"></div>
+  <div id="title"></div>
+  <textarea id="javascript"></textarea>
+  <br>
+  <button id="button">11: Button</button>
+  <script>
+    const onPageLoaded = () => {
+      // show the abusolute base URI of the document
+      document.getElementById("baseURI").textContent = '1: ' + document.baseURI;
+      // show the documents cookie
+      document.getElementById("cookie").textContent = '2: ' + (document.cookie ? document.cookie : 'No cookie');
+      // show the documents doctype
+      document.getElementById("doctype").textContent = '3: ' + document.doctype.name;
+      // show the mode used by the browser
+      document.getElementById("mode").textContent = '4: ' + document.compatMode;
+      // show the relative URI of the document
+      document.getElementById("relativeURI").textContent = '5: ' + document.documentURI;
+      // show the DOM implementation
+      document.getElementById("DOMImplementation").textContent = '6: ' + DOMImplementation;
+      // show the document's encoding type
+      document.getElementById("encodingType").textContent = '7: ' + document.inputEncoding;
+      // show if error checking is enforced
+      document.getElementById("error").textContent = '8: ' + (document.strictErrorChecking ? document.strictErrorChecking : 'No error');
+      // show the title of the document
+      document.getElementById("title").textContent = '9: ' + document.title;
+      // show all JavaScript in an Input box
+      document.getElementById("javascript").value = '10: ' + document.scripts[0].innerHTML;
+      // events for the button
+      const button = document.getElementById("button");
+      button.addEventListener("mouseover", (e) => { e.target.style.opacity = "1"; });
+      button.addEventListener("mouseout", (e) => { e.target.style.opacity = "0"; });
+    }
+  </script>
+</body>
+
+</html>
